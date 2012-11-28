@@ -53,12 +53,42 @@ class Macopedia_Solr_Model_Indexer {
         $documents = array();
         
         foreach($products as $product) {
+            
+            $magProduct = Mage::getModel('catalog/product')->load($product['product_id']);
+            $prodCat = $magProduct->getCategoryIds();
+            $magProductStock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($magProduct);
+            
             $document = Mage::getModel('solr/document');
             $document->id = $product['product_id'];
             $document->store_id = $product['store_id'];
             $document->fulltext = $product['data_index'];
+            $document->sku = $magProduct->getSku();
+            $document->status = $magProduct->getStatus();
+            $document->name = $magProduct->getName();
+            $document->description = $magProduct->getDescription();
+            $document->short_description = $magProduct->getShortDescription();
+            $document->price = $magProduct->getPrice();
+            //$document->meta_title = $magProduct->getPrice(); todo
+            //$document->meta_description = $magProduct->getPrice(); todo
+            //$document->meta_keyword = $magProduct->getPrice();
+            $document->image = $magProduct->getImageUrl();
+            $document->small_image = $magProduct->getSmallImageUrl();
+            $document->thumbnail = $magProduct->getThumbnailUrl();
+            //$document->url_key = $magProduct->getPrice(); todo
+            $document->url_path = $magProduct->getProductUrl();
+            $document->qty = $magProductStock->getQty();
+            $document->min_qty = $magProductStock->getMinQty();
+            $document->is_in_stock = $magProductStock->getIsInStock();
+            
+            foreach ($prodCat as $category_id) {
+                $_cat = Mage::getModel('catalog/category')->load($category_id) ;
+                $document->setMultiValue('categories', $_cat->getName());
+            } 
             
             $documents[] = $document;
+            
+            unset($magProduct);
+            unset($magProductStock);
         }
         
         try {
