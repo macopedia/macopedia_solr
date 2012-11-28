@@ -1,0 +1,4 @@
+app/code/local/Macopedia/ app/code/local/Macopedia/
+app/etc/modules/Macopedia_Solr.xml app/etc/modules/Macopedia_Solr.xml
+lib/Apache/Solr lib/Apache/Solr
+
