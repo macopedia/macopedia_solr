@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (c) 2012, Magentix
+ * Copyright (c) 2012, Macopedia
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -12,7 +12,7 @@
  *  - Redistributions in binary form must reproduce the above copyright notice,
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
- *  - Neither the name of the Magentix nor the names of its contributors
+ *  - Neither the name of the Macopedia nor the names of its contributors
  *    may be used to endorse or promote products derived from this software
  *    without specific prior written permission.
  * 
@@ -28,15 +28,15 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  * 
- * @copyright Copyright 2012, Magentix (http://www.magentix.fr)
+ * @copyright Copyright 2012, Macopedia (http://www.Macopedia.fr)
  * @license http://www.opensource.org/licenses/BSD-3-Clause BSD 3-Clause
  * 
  * @category Solr
- * @package Magentix_Solr
- * @author Matthieu Vion <contact@magentix.fr>
+ * @package Macopedia_Solr
+ * @author Matthieu Vion <contact@Macopedia.fr>
  */
 
-class Magentix_Solr_Model_Indexer {
+class Macopedia_Solr_Model_Indexer {
     
     /**
     * Refresh Solr Index

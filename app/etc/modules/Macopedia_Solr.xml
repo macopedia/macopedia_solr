@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Magentix_Solr>
+        <Macopedia_Solr>
             <active>true</active>
             <codePool>local</codePool>
             <depends>
                 <Mage_Catalog/>
                 <Mage_CatalogSearch/>
             </depends>
-        </Magentix_Solr>
+        </Macopedia_Solr>
     </modules>
 </config>
